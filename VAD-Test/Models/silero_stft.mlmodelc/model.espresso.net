@@ -1,0 +1,253 @@
+{
+  "storage" : "model.espresso.weights",
+  "analyses" : {
+
+  },
+  "properties" : {
+
+  },
+  "format_version" : 200,
+  "metadata_in_weights" : [
+
+  ],
+  "layers" : [
+    {
+      "bottom" : "audio_input",
+      "end" : 400,
+      "start" : 0,
+      "weights" : {
+
+      },
+      "axis" : 0,
+      "debug_info" : "37",
+      "top" : "37",
+      "type" : "slice",
+      "name" : "37"
+    },
+    {
+      "name" : "reshape_2",
+      "weights" : {
+
+      },
+      "dst_w" : -1,
+      "version" : 1,
+      "dst_n" : 1,
+      "dst_nd_rank" : 1,
+      "type" : "reshape",
+      "dst_h" : 1,
+      "mode" : 0,
+      "dynamic_shape" : false,
+      "bottom" : "37",
+      "debug_info" : "reshape_2",
+      "dst_seq" : 1,
+      "dst_k" : 1,
+      "top" : "reshape_2"
+    },
+    {
+      "top" : "reshape_3",
+      "w" : 400,
+      "h" : 1,
+      "name" : "reshape_3",
+      "nd_rank" : 1,
+      "type" : "load_constant",
+      "k" : 1,
+      "bottom" : "",
+      "debug_info" : "reshape_3",
+      "n" : 1,
+      "weights" : {
+
+      },
+      "constant_blob" : 1
+    },
+    {
+      "top" : "range_1d_0",
+      "w" : 400,
+      "h" : 1,
+      "name" : "range_1d_0",
+      "nd_rank" : 1,
+      "type" : "load_constant",
+      "k" : 1,
+      "bottom" : "",
+      "debug_info" : "range_1d_0",
+      "n" : 1,
+      "weights" : {
+
+      },
+      "constant_blob" : 3
+    },
+    {
+      "bottom" : "reshape_3,range_1d_0,reshape_2",
+      "validate_indices" : true,
+      "allow_negative_indices" : true,
+      "mode" : 0,
+      "weights" : {
+
+      },
+      "debug_info" : "scatter_0",
+      "axis" : 0,
+      "top" : "scatter_0",
+      "type" : "scatter_nd",
+      "name" : "scatter_0",
+      "accumulation_mode" : 0
+    },
+    {
+      "name" : "reshape_4",
+      "weights" : {
+
+      },
+      "dst_w" : 400,
+      "version" : 1,
+      "dst_n" : 1,
+      "dst_nd_rank" : 3,
+      "type" : "reshape",
+      "dst_h" : 1,
+      "mode" : 0,
+      "dynamic_shape" : false,
+      "bottom" : "scatter_0",
+      "debug_info" : "reshape_4",
+      "dst_seq" : 1,
+      "dst_k" : 1,
+      "top" : "reshape_4"
+    },
+    {
+      "top" : "56",
+      "w" : 400,
+      "h" : 1,
+      "name" : "56",
+      "nd_rank" : 3,
+      "type" : "load_constant",
+      "k" : 1,
+      "bottom" : "",
+      "debug_info" : "56",
+      "n" : 1,
+      "weights" : {
+
+      },
+      "constant_blob" : 5
+    },
+    {
+      "bottom" : "reshape_4,56",
+      "alpha" : 1,
+      "operation" : 1,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "windowed_frames",
+      "top" : "windowed_frames",
+      "type" : "elementwise",
+      "name" : "windowed_frames",
+      "beta" : 0
+    },
+    {
+      "nB" : 400,
+      "top" : "59",
+      "has_biases" : 1,
+      "weights" : {
+
+      },
+      "nC" : 201,
+      "blob_weights" : 9,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "windowed_frames",
+      "blob_biases" : 7,
+      "has_tanh" : 0,
+      "debug_info" : "59",
+      "name" : "59",
+      "has_prelu" : 0
+    },
+    {
+      "nB" : 400,
+      "top" : "61",
+      "has_biases" : 1,
+      "weights" : {
+
+      },
+      "nC" : 201,
+      "blob_weights" : 13,
+      "type" : "inner_product",
+      "has_relu" : 0,
+      "bottom" : "windowed_frames",
+      "blob_biases" : 11,
+      "has_tanh" : 0,
+      "debug_info" : "61",
+      "name" : "61",
+      "has_prelu" : 0
+    },
+    {
+      "bottom" : "59",
+      "alpha" : 2,
+      "operation" : 13,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "63",
+      "top" : "63",
+      "type" : "elementwise",
+      "name" : "63",
+      "beta" : 0
+    },
+    {
+      "bottom" : "61",
+      "alpha" : 2,
+      "operation" : 13,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "65",
+      "top" : "65",
+      "type" : "elementwise",
+      "name" : "65",
+      "beta" : 0
+    },
+    {
+      "bottom" : "63,65",
+      "alpha" : 1,
+      "operation" : 0,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "67",
+      "top" : "67",
+      "type" : "elementwise",
+      "name" : "67",
+      "beta" : 0
+    },
+    {
+      "bottom" : "67",
+      "alpha" : 1,
+      "operation" : 11,
+      "weights" : {
+
+      },
+      "fused_relu" : 0,
+      "debug_info" : "magnitude",
+      "top" : "magnitude",
+      "type" : "elementwise",
+      "name" : "magnitude",
+      "beta" : 0
+    },
+    {
+      "axis_seq" : 4,
+      "name" : "transpose_2",
+      "axis_n" : 3,
+      "axis_h" : 0,
+      "type" : "transpose",
+      "attributes" : {
+        "is_output" : 1
+      },
+      "bottom" : "magnitude",
+      "axis_w" : 1,
+      "axis_k" : 2,
+      "debug_info" : "transpose_2",
+      "weights" : {
+
+      },
+      "top" : "var_71"
+    }
+  ]
+}

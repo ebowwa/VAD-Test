@@ -1,0 +1,152 @@
+{
+  "storage" : "model.espresso.weights",
+  "analyses" : {
+
+  },
+  "properties" : {
+
+  },
+  "format_version" : 200,
+  "metadata_in_weights" : [
+
+  ],
+  "layers" : [
+    {
+      "size_of_axes" : 1,
+      "bottom" : "stft_features",
+      "axes_0" : -2,
+      "weights" : {
+
+      },
+      "nd_axis" : 0,
+      "debug_info" : "expand_dims_0",
+      "top" : "expand_dims_0",
+      "type" : "expand_dims",
+      "name" : "expand_dims_0"
+    },
+    {
+      "pad_r" : 1,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv_0",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 1,
+      "top" : "conv_0",
+      "blob_weights" : 3,
+      "K" : 201,
+      "blob_biases" : 1,
+      "name" : "conv_0",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 64,
+      "bottom" : "expand_dims_0",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "size_of_axes" : 1,
+      "bottom" : "conv_0",
+      "axes_0" : -2,
+      "weights" : {
+
+      },
+      "nd_axis" : 0,
+      "debug_info" : "input.1",
+      "version" : 1,
+      "top" : "input.1",
+      "type" : "squeeze",
+      "name" : "input.1"
+    },
+    {
+      "bottom" : "input.1",
+      "weights" : {
+
+      },
+      "mode" : 0,
+      "debug_info" : "input.3",
+      "top" : "input.3",
+      "type" : "activation",
+      "name" : "input.3"
+    },
+    {
+      "size_of_axes" : 1,
+      "bottom" : "input.3",
+      "axes_0" : -2,
+      "weights" : {
+
+      },
+      "nd_axis" : 0,
+      "debug_info" : "expand_dims_2",
+      "top" : "expand_dims_2",
+      "type" : "expand_dims",
+      "name" : "expand_dims_2"
+    },
+    {
+      "pad_r" : 1,
+      "fused_relu" : 0,
+      "fused_tanh" : 0,
+      "debug_info" : "conv_1",
+      "pad_fill_mode" : 0,
+      "pad_b" : 0,
+      "pad_l" : 1,
+      "top" : "conv_1",
+      "blob_weights" : 7,
+      "K" : 64,
+      "blob_biases" : 5,
+      "name" : "conv_1",
+      "has_batch_norm" : 0,
+      "type" : "convolution",
+      "n_groups" : 1,
+      "pad_t" : 0,
+      "has_biases" : 1,
+      "C" : 128,
+      "bottom" : "expand_dims_2",
+      "weights" : {
+
+      },
+      "Nx" : 3,
+      "pad_mode" : 0,
+      "pad_value" : 0,
+      "Ny" : 1,
+      "n_parallel" : 1
+    },
+    {
+      "size_of_axes" : 1,
+      "bottom" : "conv_1",
+      "axes_0" : -2,
+      "weights" : {
+
+      },
+      "nd_axis" : 0,
+      "debug_info" : "input",
+      "version" : 1,
+      "top" : "input",
+      "type" : "squeeze",
+      "name" : "input"
+    },
+    {
+      "bottom" : "input",
+      "weights" : {
+
+      },
+      "mode" : 0,
+      "debug_info" : "27",
+      "top" : "var_27",
+      "type" : "activation",
+      "name" : "27",
+      "attributes" : {
+        "is_output" : 1
+      }
+    }
+  ]
+}

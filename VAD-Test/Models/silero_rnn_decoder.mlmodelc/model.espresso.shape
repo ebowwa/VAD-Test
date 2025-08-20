@@ -1,0 +1,132 @@
+{
+  "layer_shapes" : {
+    "15_batch_first_0" : {
+      "k" : 4,
+      "w" : 128,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "transpose_1" : {
+      "k" : 4,
+      "w" : 128,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "15_batch_first_lstm_h0_squeeze" : {
+      "k" : 1,
+      "w" : 128,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "h_out" : {
+      "k" : 1,
+      "w" : 128,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "h_in" : {
+      "k" : 1,
+      "w" : 128,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "transpose_1_expanded" : {
+      "k" : 128,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 4,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "rnn_out" : {
+      "k" : 1,
+      "w" : 128,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 4
+    },
+    "15_batch_first_1" : {
+      "k" : 1,
+      "w" : 128,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "15_batch_first_lstm_h0_squeeze_expanded" : {
+      "k" : 128,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "c_out" : {
+      "k" : 1,
+      "w" : 128,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "15_batch_first_0_5d" : {
+      "k" : 128,
+      "w" : 1,
+      "n" : 1,
+      "seq" : 4,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "15_batch_first_1_5d" : {
+      "k" : 128,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "c_in" : {
+      "k" : 1,
+      "w" : 128,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 1
+    },
+    "15_batch_first_lstm_c0_squeeze" : {
+      "k" : 1,
+      "w" : 128,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "15_batch_first_2_5d" : {
+      "k" : 128,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 1
+    },
+    "encoder_features" : {
+      "k" : 1,
+      "w" : 128,
+      "n" : 1,
+      "_rank" : 3,
+      "h" : 4
+    },
+    "15_batch_first_2" : {
+      "k" : 1,
+      "w" : 128,
+      "n" : 1,
+      "_rank" : 2,
+      "h" : 1
+    },
+    "15_batch_first_lstm_c0_squeeze_expanded2" : {
+      "k" : 128,
+      "w" : 1,
+      "n" : 1,
+      "_rank" : 5,
+      "h" : 1
+    }
+  }
+}
